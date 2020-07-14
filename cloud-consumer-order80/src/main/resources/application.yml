@@ -1,4 +1,15 @@
 server:
   port: 80
 
+#配置本模块在注册中心的名称
+spring:
+  application:
+    name: cloud-order-service
 
+#将消费者添加为eureka client并在server中注册
+eureka:
+  client:
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://localhost:7002/eureka
