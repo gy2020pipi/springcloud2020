@@ -32,10 +32,17 @@
                        fetch-registry: false  #表示自己就是注册中心，职责是维护服务实例，并不需要去检索服务)
             主启动（注意：添加@EnableEurekaServer注解 表明这是一个eureka server）
             测试（启动服务，访问http://localhost:7002/）
-        服务提供者添加进服务中心：
+        服务提供者添加进服务注册中心：
             EurekaClient端cloud-provider-payment8001将注册进EurekaServer成为服务提供者provider
-            
-        
+            修改POM.xml(添加spring-cloud-starter-netflix-eureka-client)
+            修改yml 
+            改主启动（添加@EnableEurekaClient）
+        服务消费者添加进服务注册中心：
+            EurekaClient端cloud-consumer-order80将注册进EurekaServer成为服务消费者consumer
+            改POM（添加spring-cloud-starter-netflix-eureka-client）
+            改yml
+            改主启动（添加@EnableEurekaClient）
+                            2020年7月14日 20点49分
     
     
     
